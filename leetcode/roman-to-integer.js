@@ -19,15 +19,7 @@ var romanToInt = function (s) {
       skip = false
       continue
     }
-    else if (s[i] === "I" && s[i + 1] === "V" || s[i] === "I" && s[i + 1] === "X") {
-      total -= dictionary[s[i]] - dictionary[s[i + 1]]
-      skip = true
-    }
-    else if (s[i] === "X" && s[i + 1] === "L" || s[i] === "X" && s[i + 1] === "C") {
-      total -= dictionary[s[i]] - dictionary[s[i + 1]]
-      skip = true
-    }
-    else if (s[i] === "C" && s[i + 1] === "D" || s[i] === "C" && s[i + 1] === "M") {
+    else if (dictionary[s[i]] < dictionary[s[i + 1]]) {
       total -= dictionary[s[i]] - dictionary[s[i + 1]]
       skip = true
     } else {
