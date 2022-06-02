@@ -19,3 +19,14 @@ var lengthOfLastWord = function (s) {
   }
   return result
 };
+
+
+// another cleaning looking solution
+var lengthOfLastWord = function (s) {
+  let newArr = s.split(" ")
+  for (let i = newArr.length - 1; i >= 0; i--) {
+    if (newArr[i]) {
+      return newArr[i].length
+    }
+  }
+};
